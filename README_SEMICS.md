@@ -13,19 +13,16 @@ pip install -r requirements.txt
 
 
 # 1. data processing 
-data_preprocessing (별도의 파일)을 이용해서 processed된 파일('Anomaly_ID' Column까지 생성된 버전) 가져오신 후,
-data_preprocessing.py의 코드 수정(필수)
+- data/semics_data 내의 .txt 파일 제거
+- data/semics_data2 내의 .txt 파일 제거
+- data/semics_data, data/semics_data2 각각에 원하는 .csv 파일 넣은 후
 
-+ 1 새로운 데이터셋을 만들고 싶은 경우 -> 'semics'라고 적혀있는 부분대로 'new_dataset_name' 추가 + line 207에 추가
-+ 2 기존의 데이터셋 활용할 경우 -> elif dataset == 'semics' : 파일 경로만 수정 (line 155)
-
-+ data_preprocessing.py의 코드 수정 이후 다음의 명령 입력
-
-  - python3 utils/data_preprocessing.py --data_dir=path/to/dataset/ --dataset='semics' 
+  + python3 utils/data_preprocessing.py --dataset=semics
+  + python3 utils/data_preprocessing.py --dataset=semics2
 
 
 # 2. Training
-python3 train.py --dataset='semics' 
+python3 train.py --dataset='semics'
 
 
 # 3. Test
